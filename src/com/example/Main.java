@@ -9,6 +9,9 @@ public class Main {
 
         Student student1 = new Student();
 
+        System.out.println("Welcome to Maturita result app! Now you will be asked to type student´s name and surname and his grades. If one or more exams haven´t been completed yet, please enter grade 0.");
+        System.out.print("Enter student´s name and surname: ");
+        student1.setNameSurname(in.nextLine());
         System.out.print("Enter student´s first grade: ");
         student1.setGrade1(in.nextInt());
         System.out.print("Enter student´s second grade: ");
@@ -18,11 +21,13 @@ public class Main {
         System.out.print("Enter student´s fourth grade: ");
         student1.setGrade4(in.nextInt());
 
-        student1.checkIfPassedMaturita();
+        if (student1.isMaturitaOver()) {
+            student1.checkIfPassedMaturita();
+            student1.passedWithDistinction();
+        }
 
-        if (student1.getPassedMaturita() == true) {
-            System.out.println("This student passed Maturita!");
-        }else System.out.println("This student didn´t pass Maturita!");
+
+
 
     }
 }
